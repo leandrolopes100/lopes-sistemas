@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LopSystem | Soluções de Gestão Operacional</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            "colors": {
+                    "paper": "#FAFAF9",
+                    "surface": "#FFFFFF",
+                    "surface-muted": "#F4F4F6",
+                    "line": "#E4E4E9",
+                    "ink": "#111114",
+                    "ink-dim": "#6B6D74",
+                    "ink-faint": "#A4A6AC",
+                    "signal": "#4F3DF5",
+                    "signal-dim": "#EEECFE",
+                    "signal-deep": "#3B2ED1",
+                    "success": "#1F9D55",
+                    "error": "#D64545"
+            },
+            "borderRadius": {
+                    "DEFAULT": "10px",
+                    "sm": "8px",
+                    "md": "12px",
+                    "lg": "16px",
+                    "xl": "20px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "lg": "40px",
+                    "margin-desktop": "48px",
+                    "md": "24px",
+                    "margin-mobile": "16px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "sans": ["Inter", "sans-serif"],
+                    "display": ["Instrument Sans", "sans-serif"]
+            },
+            "fontSize": {
+                    "display-mobile": ["34px", {"lineHeight": "1.15", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["56px", {"lineHeight": "1.05", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.65", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.65", "fontWeight": "400"}],
+                    "eyebrow": ["12.5px", {"lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                    "caption": ["12.5px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-md": ["22px", {"lineHeight": "1.45", "fontWeight": "500"}],
+                    "headline-lg": ["34px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "data-md": ["26px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "data-lg": ["44px", {"lineHeight": "1", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+
+        .hero-glow {
+            background: radial-gradient(ellipse 60% 50% at 85% 0%, rgba(79, 61, 245, 0.08), transparent 60%);
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .js-reveal [data-reveal] {
+                opacity: 0;
+                transform: translateY(14px);
+                transition: opacity .7s ease, transform .7s ease;
+            }
+            .js-reveal [data-reveal].is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        ::selection { background: #4F3DF5; color: #ffffff; }
+
+        input:focus, select:focus, textarea:focus { outline: none; }
+    </style>
+</head>
+<body class="bg-paper text-ink font-sans antialiased overflow-x-hidden">
+<!-- Nav -->
+<header class="fixed top-0 w-full z-50 bg-paper/90 backdrop-blur-md border-b border-line flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 transition-all" id="nav-bar">
+<a class="flex items-center" href="#">
+<span class="font-display text-[17px] font-semibold text-ink">LopSystem - Soluções</span>
+</a>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-body-sm text-ink-dim hover:text-ink transition-colors" href="#projects">Soluções</a>
+<a class="text-body-sm text-ink-dim hover:text-ink transition-colors" href="#diferenciais">Diferenciais</a>
+<a class="text-body-sm text-ink-dim hover:text-ink transition-colors" href="#contact">Contato</a>
+</nav>
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center justify-center gap-2 bg-signal text-white px-5 py-2.5 rounded-lg text-body-sm font-medium shadow-sm hover:bg-signal-deep hover:shadow-md active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 focus-visible:ring-offset-2 focus-visible:ring-offset-paper" href="#contact">Iniciar projeto</a>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu" class="md:hidden border border-line p-2 text-ink rounded-lg hover:border-signal hover:text-signal active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40" id="menu-toggle" type="button">
+<span class="material-symbols-outlined text-[22px] block" id="menu-icon">menu</span>
+</button>
+</div>
+</header>
+<div class="fixed top-[65px] inset-x-0 z-40 bg-paper border-b border-line md:hidden hidden" id="mobile-menu">
+<nav class="flex flex-col px-margin-mobile py-md">
+<a class="text-body-md text-ink-dim hover:text-ink transition-colors py-3 border-b border-line" href="#projects">Soluções</a>
+<a class="text-body-md text-ink-dim hover:text-ink transition-colors py-3 border-b border-line" href="#diferenciais">Diferenciais</a>
+<a class="text-body-md text-ink-dim hover:text-ink transition-colors py-3" href="#contact">Contato</a>
+<a class="mt-md inline-flex items-center justify-center gap-2 bg-signal text-white px-5 py-3.5 rounded-lg text-body-sm text-center font-medium shadow-sm active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40" href="#contact">Iniciar projeto</a>
+</nav>
+</div>
+
+<!-- Hero -->
+<section class="relative hero-glow pt-32 pb-24 md:pt-40 md:pb-28 overflow-hidden bg-paper">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid lg:grid-cols-[1.15fr_1fr] gap-xl items-start">
+<div class="space-y-md" data-reveal>
+<div class="inline-flex items-center gap-2 text-eyebrow uppercase text-signal">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-signal opacity-60"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-signal"></span>
+</span>
+Disponível para novos projetos
+                </div>
+<h1 class="font-display text-display-mobile md:text-display-lg text-ink">
+                    Soluções feitas para como seu negócio <span class="text-signal">realmente</span> trabalha.
+                </h1>
+<p class="font-sans text-body-lg text-ink-dim max-w-xl">
+                    Do controle de frota ao faturamento e comissionamento, cada sistema é construído sob medida para a rotina real da sua empresa — sem telas genéricas, sem processos que não existem.
+                </p>
+<div class="flex flex-wrap gap-md pt-base">
+<a class="inline-flex items-center justify-center gap-2 bg-signal text-white px-7 py-4 rounded-lg text-body-sm font-medium shadow-sm hover:bg-signal-deep hover:shadow-md active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 focus-visible:ring-offset-2 focus-visible:ring-offset-paper" href="#projects">
+                        Ver sistemas entregues
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 border border-line text-ink px-7 py-4 rounded-lg text-body-sm font-medium hover:border-signal hover:text-signal hover:bg-signal-dim/30 active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 focus-visible:ring-offset-2 focus-visible:ring-offset-paper" href="#contact">
+                        Iniciar conversa
+                    </a>
+</div>
+</div>
+
+<div class="relative pt-lg border-t border-line lg:pt-0 lg:border-t-0 lg:border-l lg:border-line lg:pl-xl" data-reveal>
+<div class="border-b border-line pb-md mb-md">
+<span class="text-eyebrow uppercase text-ink-faint">Como funciona</span>
+<div class="mt-sm space-y-2.5">
+<div class="flex items-baseline gap-3">
+<span class="font-display text-body-sm font-semibold text-signal shrink-0 w-5">01</span>
+<span class="text-body-sm text-ink-dim">Diagnóstico da operação</span>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="font-display text-body-sm font-semibold text-signal shrink-0 w-5">02</span>
+<span class="text-body-sm text-ink-dim">Desenvolvimento sob medida</span>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="font-display text-body-sm font-semibold text-signal shrink-0 w-5">03</span>
+<span class="text-body-sm text-ink-dim">Sistema no ar, com suporte</span>
+</div>
+</div>
+</div>
+<span class="text-eyebrow uppercase text-ink-faint">Resultados em números</span>
+<div class="mt-sm divide-y divide-line">
+{% for indicador in indicadores %}
+<div class="flex items-center justify-between py-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-signal text-[19px]">{{ indicador.icone }}</span>
+<span class="font-sans text-body-sm text-ink-dim">{{ indicador.rotulo }}</span>
+</div>
+<span class="font-display text-data-md text-ink tabular-nums" data-countup data-value="{{ indicador.valor }}">0</span>
+</div>
+{% endfor %}
+</div>
+<p class="mt-md text-caption text-ink-faint">Indicadores dos sistemas entregues até hoje.</p>
+</div>
+</div>
+</section>
+
+<!-- Portfolio Section -->
+<section class="py-xl bg-surface-muted/60 border-y border-line" id="projects">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-lg space-y-xs max-w-2xl" data-reveal>
+<span class="text-eyebrow uppercase text-signal">Casos reais</span>
+<h2 class="font-display text-headline-lg text-ink mt-xs">Sistemas em operação</h2>
+<p class="font-sans text-body-md text-ink-dim mt-xs">Projetos construídos para operações reais — não telas de demonstração.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+{% for projeto in projetos %}
+<div class="group h-full flex flex-col bg-surface border border-line rounded-lg overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300" data-reveal>
+<div class="aspect-[4/3] overflow-hidden bg-surface-muted relative shrink-0">
+<img alt="{{ projeto.texto_alternativo }}" class="w-full h-full object-cover grayscale-[0.6] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="{{ projeto.imagem.url }}"/>
+</div>
+<div class="p-md space-y-xs flex flex-col flex-1">
+<span class="inline-block text-caption font-medium uppercase tracking-wide text-signal bg-signal-dim px-2.5 py-1 rounded-full self-start">{{ projeto.categoria }}</span>
+<h3 class="font-display text-headline-sm text-ink pt-1">{{ projeto.titulo }}</h3>
+<p class="font-sans text-body-sm text-ink-dim line-clamp-3">{{ projeto.descricao }}</p>
+<a class="inline-flex items-center gap-1 text-body-sm text-signal pt-xs font-medium mt-auto hover:text-signal-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 rounded-sm w-fit" href="#contact">
+                            Ver detalhes <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+</section>
+
+<!-- Diferenciais Section -->
+<section class="py-xl bg-paper" id="diferenciais">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-lg space-y-xs max-w-2xl" data-reveal>
+<span class="text-eyebrow uppercase text-signal">Por que a LopSystem </span>
+<h2 class="font-display text-headline-lg text-ink mt-xs">Você não precisa entender de tecnologia.</h2>
+<p class="font-sans text-body-md text-ink-dim mt-xs">A gente cuida da parte técnica. Você só sente a operação ficar mais simples.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter" data-reveal>
+<div class="space-y-sm">
+<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
+<span class="material-symbols-outlined text-[22px]">support_agent</span>
+</span>
+<h3 class="font-display text-headline-sm text-ink">Suporte direto</h3>
+<p class="font-sans text-body-sm text-ink-dim">Você fala com quem construiu o seu sistema — sem central de atendimento, sem protocolo.</p>
+</div>
+<div class="space-y-sm">
+<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+</span>
+<h3 class="font-display text-headline-sm text-ink">Do seu jeito</h3>
+<p class="font-sans text-body-sm text-ink-dim">Cada tela é pensada pra sua rotina. Se o seu processo não existe em nenhum sistema pronto, a gente constrói do zero.</p>
+</div>
+<div class="space-y-sm">
+<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+</span>
+<h3 class="font-display text-headline-sm text-ink">Sem letra miúda</h3>
+<p class="font-sans text-body-sm text-ink-dim">Preço combinado antes de começar. Sem taxa por usuário, sem surpresa na fatura.</p>
+</div>
+<div class="space-y-sm">
+<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</span>
+<h3 class="font-display text-headline-sm text-ink">No ar rápido</h3>
+<p class="font-sans text-body-sm text-ink-dim">Sem trâmite de meses. Do primeiro papo ao sistema funcionando, no prazo combinado.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-xl bg-surface-muted/60 border-y border-line">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="max-w-3xl mx-auto text-center space-y-lg" data-reveal>
+<span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-signal-dim text-signal">
+<span class="material-symbols-outlined text-[24px]">format_quote</span>
+</span>
+<div class="grid" id="testimonial-slider">
+{% for depoimento in depoimentos %}
+<div class="col-start-1 row-start-1 space-y-md transition-opacity duration-700 ease-in-out{% if not forloop.first %} opacity-0 pointer-events-none{% endif %}" data-slide="{{ forloop.counter0 }}">
+<p class="font-display text-headline-md text-ink leading-relaxed">
+                            "{{ depoimento.texto }}"
+                        </p>
+<div>
+<p class="font-display text-headline-sm text-signal">{{ depoimento.nome }}</p>
+<p class="font-sans text-body-sm text-ink-dim">{{ depoimento.cargo_empresa }}</p>
+</div>
+</div>
+{% endfor %}
+</div>
+<div class="flex justify-center gap-2">
+{% for depoimento in depoimentos %}
+<button aria-label="Depoimento {{ forloop.counter }}" class="w-2 h-2 rounded-full transition-colors duration-200 hover:bg-signal-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 focus-visible:ring-offset-2{% if forloop.first %} bg-signal{% else %} bg-line{% endif %} testimonial-dot" data-slide="{{ forloop.counter0 }}" type="button"></button>
+{% endfor %}
+</div>
+</div>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-xl bg-paper" id="contact">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid lg:grid-cols-2 gap-xl">
+<div class="space-y-lg" data-reveal>
+<div class="space-y-base">
+<span class="text-eyebrow uppercase text-signal">Iniciar projeto</span>
+<h2 class="font-display text-headline-lg text-ink mt-xs">Sua operação, em sistema.</h2>
+<p class="font-sans text-body-lg text-ink-dim mt-xs">Conte o que trava sua operação hoje. Respondemos com um diagnóstico técnico, não com um roteiro de vendas.</p>
+</div>
+<div class="space-y-md">
+<div class="flex items-center gap-md">
+<div class="w-11 h-11 rounded-lg bg-signal-dim flex items-center justify-center text-signal shrink-0">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<div>
+<p class="text-eyebrow uppercase text-ink-faint">E-mail</p>
+<p class="font-sans text-body-md text-ink font-medium mt-1">leandro10lopesbaln@gmail.com</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-11 h-11 rounded-lg bg-signal-dim flex items-center justify-center text-signal shrink-0">
+<span class="material-symbols-outlined text-[20px]">phone_iphone</span>
+</div>
+<div>
+<p class="text-eyebrow uppercase text-ink-faint">Telefone / WhatsApp</p>
+<p class="font-sans text-body-md text-ink font-medium mt-1">+55 (51) 98335-5915</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface border border-line p-lg rounded-lg shadow-sm" data-reveal>
+{% if messages %}
+<div class="mb-md space-y-xs">
+{% for message in messages %}
+<div class="border-l-2 {% if message.tags == 'success' %}border-success{% else %}border-error{% endif %} bg-surface-muted px-3 py-2 font-sans text-body-sm text-ink rounded-r">{{ message }}</div>
+{% endfor %}
+</div>
+{% endif %}
+<form class="space-y-md" method="post">
+{% csrf_token %}
+<div class="grid grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="text-eyebrow uppercase text-ink-faint" for="{{ formulario.nome.id_for_label }}">Nome</label>
+{{ formulario.nome }}
+</div>
+<div class="space-y-xs">
+<label class="text-eyebrow uppercase text-ink-faint" for="{{ formulario.email.id_for_label }}">E-mail</label>
+{{ formulario.email }}
+</div>
+</div>
+<div class="space-y-xs">
+<label class="text-eyebrow uppercase text-ink-faint" for="{{ formulario.assunto.id_for_label }}">Assunto</label>
+{{ formulario.assunto }}
+</div>
+<div class="space-y-xs">
+<label class="text-eyebrow uppercase text-ink-faint" for="{{ formulario.mensagem.id_for_label }}">Mensagem</label>
+{{ formulario.mensagem }}
+</div>
+<button class="w-full inline-flex items-center justify-center gap-2 bg-signal text-white py-4 rounded-lg text-body-sm font-medium shadow-sm hover:bg-signal-deep hover:shadow-md active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 focus-visible:ring-offset-2 focus-visible:ring-offset-surface" type="submit">
+                            Enviar mensagem <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-paper border-t border-line w-full">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-lg w-full max-w-full mx-auto gap-md">
+<div class="flex items-center">
+<span class="font-display text-[15px] text-ink font-semibold">LopSystem - Soluções</span>
+</div>
+<p class="font-sans text-caption text-ink-faint">
+                © 2026 LopSystem - Soluções. Todos os direitos reservados.
+            </p>
+</div>
+</footer>
+
+<script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        const bar = document.getElementById('nav-bar');
+        window.addEventListener('scroll', () => {
+            bar.classList.toggle('shadow-sm', window.scrollY > 40);
+            bar.classList.toggle('py-3', window.scrollY > 40);
+            bar.classList.toggle('py-4', window.scrollY <= 40);
+        });
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuIcon.textContent = 'menu';
+        }
+        menuToggle.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            menuIcon.textContent = isOpen ? 'menu' : 'close';
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const slides = document.querySelectorAll('#testimonial-slider [data-slide]');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        let depoimentoAtual = 0;
+        let autoplayId = null;
+
+        function mostrarDepoimento(index) {
+            depoimentoAtual = index;
+            slides.forEach(slide => {
+                const ativa = Number(slide.getAttribute('data-slide')) === index;
+                slide.classList.toggle('opacity-0', !ativa);
+                slide.classList.toggle('pointer-events-none', !ativa);
+            });
+            dots.forEach(dot => {
+                const ativo = Number(dot.getAttribute('data-slide')) === index;
+                dot.classList.toggle('bg-signal', ativo);
+                dot.classList.toggle('bg-line', !ativo);
+            });
+        }
+
+        function iniciarAutoplayDepoimentos() {
+            if (reduceMotion || slides.length <= 1 || autoplayId) return;
+            autoplayId = setInterval(() => {
+                mostrarDepoimento((depoimentoAtual + 1) % slides.length);
+            }, 6000);
+        }
+
+        function pararAutoplayDepoimentos() {
+            clearInterval(autoplayId);
+            autoplayId = null;
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                mostrarDepoimento(Number(dot.getAttribute('data-slide')));
+                pararAutoplayDepoimentos();
+                iniciarAutoplayDepoimentos();
+            });
+        });
+
+        const testimonialSection = document.getElementById('testimonial-slider')?.closest('section');
+        if (testimonialSection) {
+            testimonialSection.addEventListener('mouseenter', pararAutoplayDepoimentos);
+            testimonialSection.addEventListener('mouseleave', iniciarAutoplayDepoimentos);
+            testimonialSection.addEventListener('focusin', pararAutoplayDepoimentos);
+            testimonialSection.addEventListener('focusout', iniciarAutoplayDepoimentos);
+        }
+
+        iniciarAutoplayDepoimentos();
+
+        function animateCountUp(el) {
+            const raw = el.getAttribute('data-value') || '0';
+            const match = raw.match(/^(\d+(?:\.\d+)?)(.*)$/);
+            if (!match) { el.textContent = raw; return; }
+            const target = parseFloat(match[1]);
+            const suffix = match[2] || '';
+            const decimals = (match[1].split('.')[1] || '').length;
+            if (reduceMotion) { el.textContent = target.toFixed(decimals) + suffix; return; }
+            const duration = 1500;
+            const start = performance.now();
+            function tick(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = (target * eased).toFixed(decimals) + suffix;
+                if (progress < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+        document.querySelectorAll('[data-countup]').forEach(el => setTimeout(() => animateCountUp(el), 300));
+
+        if (!reduceMotion && 'IntersectionObserver' in window) {
+            document.documentElement.classList.add('js-reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+        }
+    </script>
+</body></html>
