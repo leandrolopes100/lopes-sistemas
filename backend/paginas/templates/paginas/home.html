@@ -252,30 +252,98 @@ Disponível para novos projetos
 </div>
 </section>
 
-<!-- Testimonials -->
-<section class="py-xl bg-surface-muted/60 border-y border-line">
-<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="max-w-3xl mx-auto text-center space-y-lg" data-reveal>
-<span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-signal-dim text-signal">
-<span class="material-symbols-outlined text-[24px]">format_quote</span>
-</span>
-<div class="grid" id="testimonial-slider">
-{% for depoimento in depoimentos %}
-<div class="col-start-1 row-start-1 space-y-md transition-opacity duration-700 ease-in-out{% if not forloop.first %} opacity-0 pointer-events-none{% endif %}" data-slide="{{ forloop.counter0 }}">
-<p class="font-display text-headline-md text-ink leading-relaxed">
-                            "{{ depoimento.texto }}"
-                        </p>
-<div>
-<p class="font-display text-headline-sm text-signal">{{ depoimento.nome }}</p>
-<p class="font-sans text-body-sm text-ink-dim">{{ depoimento.cargo_empresa }}</p>
+<!-- FAQ -->
+<section class="py-xl bg-surface-muted/60 border-y border-line" id="faq">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop grid lg:grid-cols-2 gap-xl items-start">
+<div class="lg:sticky lg:top-32" data-reveal>
+<span class="text-eyebrow uppercase text-signal">Perguntas frequentes</span>
+<h2 class="font-display text-headline-lg text-ink mt-xs">Tire suas dúvidas antes de começar.</h2>
+<p class="font-sans text-body-md text-ink-dim mt-xs">Se a sua dúvida não estiver aqui, é só chamar — respondemos direto, sem enrolação.</p>
+<ul class="mt-lg space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-signal text-[20px] shrink-0">check_circle</span>
+<span class="font-sans text-body-sm text-ink-dim">Diagnóstico inicial sem custo</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-signal text-[20px] shrink-0">check_circle</span>
+<span class="font-sans text-body-sm text-ink-dim">Preço e prazo fechados antes de começar</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-signal text-[20px] shrink-0">check_circle</span>
+<span class="font-sans text-body-sm text-ink-dim">Suporte direto com quem constrói</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-signal text-[20px] shrink-0">check_circle</span>
+<span class="font-sans text-body-sm text-ink-dim">Sem contrato de fidelidade</span>
+</li>
+</ul>
+</div>
+<div class="border-t border-line divide-y divide-line" data-reveal id="faq-list">
+<div class="faq-item">
+<button aria-controls="faq-resposta-1" aria-expanded="false" class="faq-pergunta w-full flex items-center justify-between gap-4 py-5 text-left" id="faq-pergunta-1" type="button">
+<span class="font-display text-headline-sm text-ink">Quanto custa um sistema sob medida?</span>
+<span class="faq-icone material-symbols-outlined text-signal text-[22px] shrink-0 transition-transform duration-300">add</span>
+</button>
+<div class="faq-resposta grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out" id="faq-resposta-1" role="region">
+<div class="overflow-hidden">
+<p class="font-sans text-body-sm text-ink-dim pb-5 pr-8">O valor depende do tamanho do projeto, mas é sempre combinado antes de começar — sem taxa por usuário e sem cobrança escondida depois de pronto. Você recebe uma proposta fechada logo após o diagnóstico inicial.</p>
 </div>
 </div>
-{% endfor %}
 </div>
-<div class="flex justify-center gap-2">
-{% for depoimento in depoimentos %}
-<button aria-label="Depoimento {{ forloop.counter }}" class="w-2 h-2 rounded-full transition-colors duration-200 hover:bg-signal-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 focus-visible:ring-offset-2{% if forloop.first %} bg-signal{% else %} bg-line{% endif %} testimonial-dot" data-slide="{{ forloop.counter0 }}" type="button"></button>
-{% endfor %}
+<div class="faq-item">
+<button aria-controls="faq-resposta-2" aria-expanded="false" class="faq-pergunta w-full flex items-center justify-between gap-4 py-5 text-left" id="faq-pergunta-2" type="button">
+<span class="font-display text-headline-sm text-ink">Quanto tempo leva para o sistema ficar pronto?</span>
+<span class="faq-icone material-symbols-outlined text-signal text-[22px] shrink-0 transition-transform duration-300">add</span>
+</button>
+<div class="faq-resposta grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out" id="faq-resposta-2" role="region">
+<div class="overflow-hidden">
+<p class="font-sans text-body-sm text-ink-dim pb-5 pr-8">Varia com a complexidade do que você precisa, mas o prazo é definido logo no início e combinado com clareza antes de começar o desenvolvimento — sem trâmite de meses parado esperando resposta.</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-controls="faq-resposta-3" aria-expanded="false" class="faq-pergunta w-full flex items-center justify-between gap-4 py-5 text-left" id="faq-pergunta-3" type="button">
+<span class="font-display text-headline-sm text-ink">Preciso entender de tecnologia para usar o sistema?</span>
+<span class="faq-icone material-symbols-outlined text-signal text-[22px] shrink-0 transition-transform duration-300">add</span>
+</button>
+<div class="faq-resposta grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out" id="faq-resposta-3" role="region">
+<div class="overflow-hidden">
+<p class="font-sans text-body-sm text-ink-dim pb-5 pr-8">Não. Cada tela é pensada para quem opera o negócio no dia a dia, não para quem programa. Se surgir qualquer dúvida no uso, o suporte é direto comigo — sem central de atendimento, sem protocolo.</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-controls="faq-resposta-4" aria-expanded="false" class="faq-pergunta w-full flex items-center justify-between gap-4 py-5 text-left" id="faq-pergunta-4" type="button">
+<span class="font-display text-headline-sm text-ink">Meu processo é muito específico — vocês conseguem atender?</span>
+<span class="faq-icone material-symbols-outlined text-signal text-[22px] shrink-0 transition-transform duration-300">add</span>
+</button>
+<div class="faq-resposta grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out" id="faq-resposta-4" role="region">
+<div class="overflow-hidden">
+<p class="font-sans text-body-sm text-ink-dim pb-5 pr-8">Esse é justamente o ponto: Além dos sistemas prontos, temos soluções que são adaptadas e desenvolvidas especialmente para seu modelo de negócio. Se o seu processo não existe em nenhuma ferramenta do mercado, ele é construído do zero, do jeito que sua operação realmente funciona.</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-controls="faq-resposta-5" aria-expanded="false" class="faq-pergunta w-full flex items-center justify-between gap-4 py-5 text-left" id="faq-pergunta-5" type="button">
+<span class="font-display text-headline-sm text-ink">E se eu precisar de um ajuste depois que o sistema estiver no ar?</span>
+<span class="faq-icone material-symbols-outlined text-signal text-[22px] shrink-0 transition-transform duration-300">add</span>
+</button>
+<div class="faq-resposta grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out" id="faq-resposta-5" role="region">
+<div class="overflow-hidden">
+<p class="font-sans text-body-sm text-ink-dim pb-5 pr-8">Ajustes fazem parte do pós-entrega. Pequenas mudanças ficam no suporte direto; melhorias maiores são orçadas separadamente, sempre combinadas com você antes de qualquer alteração.</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-controls="faq-resposta-6" aria-expanded="false" class="faq-pergunta w-full flex items-center justify-between gap-4 py-5 text-left" id="faq-pergunta-6" type="button">
+<span class="font-display text-headline-sm text-ink">Preciso abandonar as planilhas e o WhatsApp de uma vez?</span>
+<span class="faq-icone material-symbols-outlined text-signal text-[22px] shrink-0 transition-transform duration-300">add</span>
+</button>
+<div class="faq-resposta grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out" id="faq-resposta-6" role="region">
+<div class="overflow-hidden">
+<p class="font-sans text-body-sm text-ink-dim pb-5 pr-8">Não precisa ser uma virada de chave. A transição pode ser gradual, priorizando primeiro a parte da operação que mais está travando o seu negócio hoje.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -396,54 +464,27 @@ Disponível para novos projetos
 
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        const slides = document.querySelectorAll('#testimonial-slider [data-slide]');
-        const dots = document.querySelectorAll('.testimonial-dot');
-        let depoimentoAtual = 0;
-        let autoplayId = null;
-
-        function mostrarDepoimento(index) {
-            depoimentoAtual = index;
-            slides.forEach(slide => {
-                const ativa = Number(slide.getAttribute('data-slide')) === index;
-                slide.classList.toggle('opacity-0', !ativa);
-                slide.classList.toggle('pointer-events-none', !ativa);
-            });
-            dots.forEach(dot => {
-                const ativo = Number(dot.getAttribute('data-slide')) === index;
-                dot.classList.toggle('bg-signal', ativo);
-                dot.classList.toggle('bg-line', !ativo);
-            });
-        }
-
-        function iniciarAutoplayDepoimentos() {
-            if (reduceMotion || slides.length <= 1 || autoplayId) return;
-            autoplayId = setInterval(() => {
-                mostrarDepoimento((depoimentoAtual + 1) % slides.length);
-            }, 6000);
-        }
-
-        function pararAutoplayDepoimentos() {
-            clearInterval(autoplayId);
-            autoplayId = null;
-        }
-
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                mostrarDepoimento(Number(dot.getAttribute('data-slide')));
-                pararAutoplayDepoimentos();
-                iniciarAutoplayDepoimentos();
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const pergunta = item.querySelector('.faq-pergunta');
+            const resposta = item.querySelector('.faq-resposta');
+            const icone = item.querySelector('.faq-icone');
+            pergunta.addEventListener('click', () => {
+                const abrindo = pergunta.getAttribute('aria-expanded') !== 'true';
+                faqItems.forEach(outro => {
+                    outro.querySelector('.faq-pergunta').setAttribute('aria-expanded', 'false');
+                    outro.querySelector('.faq-resposta').classList.remove('grid-rows-[1fr]');
+                    outro.querySelector('.faq-resposta').classList.add('grid-rows-[0fr]');
+                    outro.querySelector('.faq-icone').classList.remove('rotate-45');
+                });
+                if (abrindo) {
+                    pergunta.setAttribute('aria-expanded', 'true');
+                    resposta.classList.remove('grid-rows-[0fr]');
+                    resposta.classList.add('grid-rows-[1fr]');
+                    icone.classList.add('rotate-45');
+                }
             });
         });
-
-        const testimonialSection = document.getElementById('testimonial-slider')?.closest('section');
-        if (testimonialSection) {
-            testimonialSection.addEventListener('mouseenter', pararAutoplayDepoimentos);
-            testimonialSection.addEventListener('mouseleave', iniciarAutoplayDepoimentos);
-            testimonialSection.addEventListener('focusin', pararAutoplayDepoimentos);
-            testimonialSection.addEventListener('focusout', iniciarAutoplayDepoimentos);
-        }
-
-        iniciarAutoplayDepoimentos();
 
         function animateCountUp(el) {
             const raw = el.getAttribute('data-value') || '0';
