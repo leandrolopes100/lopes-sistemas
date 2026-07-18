@@ -21,6 +21,7 @@ class Projeto(models.Model):
     categoria = models.CharField(max_length=50)
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
+    stack = models.CharField(max_length=150, blank=True, help_text="Ex: Django · PostgreSQL · Bootstrap")
     imagem = models.ImageField(upload_to="projetos/")
     texto_alternativo = models.CharField(max_length=255, blank=True)
     ordem = models.PositiveIntegerField(default=0)

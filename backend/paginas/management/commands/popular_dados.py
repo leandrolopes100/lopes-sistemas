@@ -17,6 +17,7 @@ PROJETOS = [
         "categoria": "Logística",
         "titulo": "ERP de Logística",
         "descricao": "Gestão completa de frotas e automação de rotas para transportadoras de grande porte.",
+        "stack": "Django · PostgreSQL · Bootstrap",
         "cor_fundo": "#0b1c30",
         "ordem": 1,
     },
@@ -24,6 +25,7 @@ PROJETOS = [
         "categoria": "Fintech",
         "titulo": "Dashboard Financeiro",
         "descricao": "Visualização de KPIs em tempo real com integração bancária segura via APIs.",
+        "stack": "Django · PostgreSQL · Chart.js",
         "cor_fundo": "#0058be",
         "ordem": 2,
     },
@@ -31,6 +33,7 @@ PROJETOS = [
         "categoria": "Indústria",
         "titulo": "CRM Industrial",
         "descricao": "Otimização do ciclo de vendas e acompanhamento de contratos para fábricas.",
+        "stack": "Django (CBV) · PostgreSQL · Bootstrap",
         "cor_fundo": "#213145",
         "ordem": 3,
     },
@@ -47,12 +50,16 @@ DEPOIMENTOS = [
 ]
 
 TECNOLOGIAS = [
-    {"nome": "TypeScript", "icone": "javascript", "ordem": 1},
-    {"nome": "React", "icone": "frame_source", "ordem": 2},
-    {"nome": "Node.js", "icone": "hub", "ordem": 3},
-    {"nome": "PostgreSQL", "icone": "database", "ordem": 4},
-    {"nome": "Docker", "icone": "view_in_ar", "ordem": 5},
-    {"nome": "AWS", "icone": "cloud_queue", "ordem": 6},
+    {"nome": "Python", "icone": "code", "ordem": 1},
+    {"nome": "Django", "icone": "widgets", "ordem": 2},
+    {"nome": "Java", "icone": "coffee", "ordem": 3},
+    {"nome": "JavaScript", "icone": "javascript", "ordem": 4},
+    {"nome": "PostgreSQL", "icone": "database", "ordem": 5},
+    {"nome": "Bootstrap / Tailwind", "icone": "palette", "ordem": 6},
+    {"nome": "APIs REST", "icone": "api", "ordem": 7},
+    {"nome": "Docker", "icone": "view_in_ar", "ordem": 8},
+    {"nome": "Nginx", "icone": "dns", "ordem": 9},
+    {"nome": "VPS / Linux", "icone": "terminal", "ordem": 10},
 ]
 
 
@@ -85,6 +92,7 @@ class Command(BaseCommand):
                 categoria=dados["categoria"],
                 titulo=dados["titulo"],
                 descricao=dados["descricao"],
+                stack=dados["stack"],
                 texto_alternativo=f"Screenshot ilustrativo do projeto {dados['titulo']}",
                 ordem=dados["ordem"],
             )
