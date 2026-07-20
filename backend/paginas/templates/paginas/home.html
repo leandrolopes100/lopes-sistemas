@@ -116,6 +116,7 @@
 <a class="text-body-sm text-ink-dim hover:text-ink transition-colors" href="#projects">Soluções</a>
 <a class="text-body-sm text-ink-dim hover:text-ink transition-colors" href="#tech">Stack</a>
 <a class="text-body-sm text-ink-dim hover:text-ink transition-colors" href="#diferenciais">Diferenciais</a>
+<a class="text-body-sm text-ink-dim hover:text-ink transition-colors" href="#faq">Perguntas</a>
 <a class="text-body-sm text-ink-dim hover:text-ink transition-colors" href="#contact">Contato</a>
 </nav>
 <div class="flex items-center gap-3">
@@ -130,6 +131,7 @@
 <a class="text-body-md text-ink-dim hover:text-ink transition-colors py-3 border-b border-line" href="#projects">Soluções</a>
 <a class="text-body-md text-ink-dim hover:text-ink transition-colors py-3 border-b border-line" href="#tech">Stack</a>
 <a class="text-body-md text-ink-dim hover:text-ink transition-colors py-3 border-b border-line" href="#diferenciais">Diferenciais</a>
+<a class="text-body-md text-ink-dim hover:text-ink transition-colors py-3 border-b border-line" href="#faq">Perguntas</a>
 <a class="text-body-md text-ink-dim hover:text-ink transition-colors py-3" href="#contact">Contato</a>
 <a class="mt-md inline-flex items-center justify-center gap-2 bg-signal text-white px-5 py-3.5 rounded-lg text-body-sm text-center font-medium shadow-sm active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40" href="#contact">Iniciar projeto</a>
 </nav>
@@ -220,11 +222,58 @@ Disponível para novos projetos
 {% endif %}
 <p class="font-sans text-body-sm text-ink-dim line-clamp-3">{{ projeto.descricao }}</p>
 <a class="inline-flex items-center gap-1 text-body-sm text-signal pt-xs font-medium mt-auto hover:text-signal-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 rounded-sm w-fit" href="#contact">
-                            Ver detalhes <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            Perguntar sobre este projeto <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>
 </div>
 </div>
 {% endfor %}
+</div>
+<div class="flex justify-center mt-lg" data-reveal>
+<a class="inline-flex items-center justify-center gap-2 border border-line text-ink px-7 py-4 rounded-lg text-body-sm font-medium hover:border-signal hover:text-signal hover:bg-signal-dim/30 active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-muted" href="https://wa.me/5551983355915" rel="noopener" target="_blank">
+                    Conhecer todos os sistemas e ferramentas
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- Ferramentas Section -->
+<section class="py-xl bg-paper">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-lg space-y-xs max-w-2xl" data-reveal>
+<span class="text-eyebrow uppercase text-signal">Além dos sistemas completos</span>
+<h2 class="font-display text-headline-lg text-ink mt-xs">Também resolvo problemas pontuais.</h2>
+<p class="font-sans text-body-md text-ink-dim mt-xs">Nem sempre é um sistema inteiro que falta. Às vezes é só uma dessas frentes.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter" data-reveal>
+<div class="space-y-sm">
+<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
+<span class="material-symbols-outlined text-[22px]">monitoring</span>
+</span>
+<h3 class="font-display text-headline-sm text-ink">Dashboards de dados</h3>
+<p class="font-sans text-body-sm text-ink-dim">Transformo planilhas soltas em painéis com os números que importam, atualizados sozinhos.</p>
+</div>
+<div class="space-y-sm">
+<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
+<span class="material-symbols-outlined text-[22px]">travel_explore</span>
+</span>
+<h3 class="font-display text-headline-sm text-ink">Coleta automática de dados</h3>
+<p class="font-sans text-body-sm text-ink-dim">Preciso de preço de concorrente, dado de um site, um cadastro público? Eu automatizo a coleta, sem trabalho manual.</p>
+</div>
+<div class="space-y-sm">
+<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</span>
+<h3 class="font-display text-headline-sm text-ink">Automação de tarefas repetitivas</h3>
+<p class="font-sans text-body-sm text-ink-dim">Relatório que alguém monta toda semana na mão, e-mail que sai sempre igual — eu construo o robô que faz isso por você.</p>
+</div>
+<div class="space-y-sm">
+<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
+<span class="material-symbols-outlined text-[22px]">hub</span>
+</span>
+<h3 class="font-display text-headline-sm text-ink">Integrações entre sistemas</h3>
+<p class="font-sans text-body-sm text-ink-dim">Faço seu sistema conversar com planilha, WhatsApp, banco ou qualquer outra ferramenta que você já usa.</p>
+</div>
 </div>
 </div>
 </section>
@@ -403,7 +452,7 @@ Disponível para novos projetos
 </div>
 <div>
 <p class="text-eyebrow uppercase text-ink-faint">E-mail</p>
-<p class="font-sans text-body-md text-ink font-medium mt-1">leandro10lopesbaln@gmail.com</p>
+<a class="font-sans text-body-md text-ink font-medium mt-1 hover:text-signal transition-colors block" href="mailto:leandro10lopesbaln@gmail.com">leandro10lopesbaln@gmail.com</a>
 </div>
 </div>
 <div class="flex items-center gap-md">
@@ -412,7 +461,7 @@ Disponível para novos projetos
 </div>
 <div>
 <p class="text-eyebrow uppercase text-ink-faint">Telefone / WhatsApp</p>
-<p class="font-sans text-body-md text-ink font-medium mt-1">+55 (51) 98335-5915</p>
+<a class="font-sans text-body-md text-ink font-medium mt-1 hover:text-signal transition-colors block" href="https://wa.me/5551983355915" rel="noopener" target="_blank">+55 (51) 98335-5915</a>
 </div>
 </div>
 </div>
@@ -427,7 +476,7 @@ Disponível para novos projetos
 {% endif %}
 <form class="space-y-md" method="post">
 {% csrf_token %}
-<div class="grid grid-cols-2 gap-md">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
 <div class="space-y-xs">
 <label class="text-eyebrow uppercase text-ink-faint" for="{{ formulario.nome.id_for_label }}">Nome</label>
 {{ formulario.nome }}
