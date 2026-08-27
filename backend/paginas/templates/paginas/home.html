@@ -18,32 +18,33 @@
 <meta content="Sou desenvolvedor especializado em sistemas de gestão sob medida — frota, faturamento e comissionamento, sem telas genéricas e sem processos que não existem." name="twitter:description"/>
 <meta content="https://lopsystem.com.br{% static 'paginas/img/og-image.png' %}" name="twitter:image"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
         theme: {
           extend: {
             "colors": {
-                    "paper": "#FAFAF9",
+                    "paper": "#F3F2EE",
                     "surface": "#FFFFFF",
-                    "surface-muted": "#F4F4F6",
-                    "line": "#E4E4E9",
-                    "ink": "#111114",
-                    "ink-dim": "#6B6D74",
-                    "ink-faint": "#A4A6AC",
-                    "signal": "#4F3DF5",
-                    "signal-dim": "#EEECFE",
-                    "signal-deep": "#3B2ED1",
+                    "surface-muted": "#EAE8E1",
+                    "line": "#DCDACF",
+                    "ink": "#1B1B18",
+                    "ink-dim": "#63615A",
+                    "ink-faint": "#9A978C",
+                    "stamp": "#B6392F",
+                    "stamp-dim": "#F6E7E4",
+                    "stamp-deep": "#8F2C25",
+                    "carbon": "#EEF0FB",
                     "success": "#1F9D55",
-                    "error": "#D64545"
+                    "error": "#B6392F"
             },
             "borderRadius": {
-                    "DEFAULT": "10px",
-                    "sm": "8px",
-                    "md": "12px",
-                    "lg": "16px",
-                    "xl": "20px",
+                    "DEFAULT": "6px",
+                    "sm": "4px",
+                    "md": "8px",
+                    "lg": "10px",
+                    "xl": "14px",
                     "full": "9999px"
             },
             "spacing": {
@@ -58,22 +59,23 @@
                     "gutter": "24px"
             },
             "fontFamily": {
-                    "sans": ["Inter", "sans-serif"],
-                    "display": ["Instrument Sans", "sans-serif"]
+                    "sans": ["IBM Plex Sans", "sans-serif"],
+                    "display": ["Space Grotesk", "sans-serif"],
+                    "mono": ["IBM Plex Mono", "monospace"]
             },
             "fontSize": {
-                    "display-mobile": ["34px", {"lineHeight": "1.15", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                    "display-lg": ["56px", {"lineHeight": "1.05", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-mobile": ["32px", {"lineHeight": "1.18", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["52px", {"lineHeight": "1.08", "letterSpacing": "-0.015em", "fontWeight": "700"}],
                     "body-sm": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
                     "body-md": ["16px", {"lineHeight": "1.65", "fontWeight": "400"}],
                     "body-lg": ["18px", {"lineHeight": "1.65", "fontWeight": "400"}],
-                    "eyebrow": ["12.5px", {"lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                    "eyebrow": ["11.5px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
                     "caption": ["12.5px", {"lineHeight": "1.4", "fontWeight": "400"}],
                     "headline-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
                     "headline-md": ["22px", {"lineHeight": "1.45", "fontWeight": "500"}],
-                    "headline-lg": ["34px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                    "data-md": ["26px", {"lineHeight": "1", "fontWeight": "600"}],
-                    "data-lg": ["44px", {"lineHeight": "1", "fontWeight": "700"}]
+                    "headline-lg": ["32px", {"lineHeight": "1.22", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "data-md": ["24px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "data-lg": ["42px", {"lineHeight": "1", "fontWeight": "700"}]
             }
           }
         }
@@ -83,11 +85,54 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'IBM Plex Sans', sans-serif; }
 
-        .hero-glow {
-            background: radial-gradient(ellipse 60% 50% at 85% 0%, rgba(79, 61, 245, 0.08), transparent 60%);
+        .hero-texture {
+            background-image: radial-gradient(rgba(27,27,24,0.08) 1px, transparent 1px);
+            background-size: 22px 22px;
         }
+
+        .stamp-badge {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid #B6392F;
+            color: #B6392F;
+            border-radius: 9999px;
+            padding: 0.4rem 0.95rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            transform: rotate(-6deg);
+            white-space: nowrap;
+        }
+        .stamp-badge::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border: 1px solid currentColor;
+            border-radius: 9999px;
+            opacity: 0.45;
+        }
+
+        .ticket-perf {
+            position: relative;
+            border-top: 1px dashed #DCDACF;
+        }
+        .ticket-perf::before, .ticket-perf::after {
+            content: '';
+            position: absolute;
+            top: -7px;
+            width: 14px;
+            height: 14px;
+            border-radius: 9999px;
+            background: #F3F2EE;
+        }
+        .ticket-perf::before { left: -1px; }
+        .ticket-perf::after { right: -1px; }
 
         @media (prefers-reduced-motion: no-preference) {
             .js-reveal [data-reveal] {
@@ -101,7 +146,7 @@
             }
         }
 
-        ::selection { background: #4F3DF5; color: #ffffff; }
+        ::selection { background: #B6392F; color: #ffffff; }
 
         input:focus, select:focus, textarea:focus { outline: none; }
     </style>
@@ -120,8 +165,8 @@
 <a class="text-body-sm text-ink-dim hover:text-ink transition-colors" href="#contact">Contato</a>
 </nav>
 <div class="flex items-center gap-3">
-<a class="hidden sm:inline-flex items-center justify-center gap-2 bg-signal text-white px-5 py-2.5 rounded-lg text-body-sm font-medium shadow-sm hover:bg-signal-deep hover:shadow-md active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 focus-visible:ring-offset-2 focus-visible:ring-offset-paper" href="#contact">Iniciar projeto</a>
-<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu" class="md:hidden border border-line p-2 text-ink rounded-lg hover:border-signal hover:text-signal active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40" id="menu-toggle" type="button">
+<a class="hidden sm:inline-flex items-center justify-center gap-2 bg-stamp text-white px-5 py-2.5 rounded-lg text-body-sm font-medium shadow-sm hover:bg-stamp-deep hover:shadow-md active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stamp/40 focus-visible:ring-offset-2 focus-visible:ring-offset-paper" href="#contact">Iniciar projeto</a>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu" class="md:hidden border border-line p-2 text-ink rounded-lg hover:border-stamp hover:text-stamp active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stamp/40" id="menu-toggle" type="button">
 <span class="material-symbols-outlined text-[22px] block" id="menu-icon">menu</span>
 </button>
 </div>
@@ -133,69 +178,75 @@
 <a class="text-body-md text-ink-dim hover:text-ink transition-colors py-3 border-b border-line" href="#diferenciais">Diferenciais</a>
 <a class="text-body-md text-ink-dim hover:text-ink transition-colors py-3 border-b border-line" href="#faq">Perguntas</a>
 <a class="text-body-md text-ink-dim hover:text-ink transition-colors py-3" href="#contact">Contato</a>
-<a class="mt-md inline-flex items-center justify-center gap-2 bg-signal text-white px-5 py-3.5 rounded-lg text-body-sm text-center font-medium shadow-sm active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40" href="#contact">Iniciar projeto</a>
+<a class="mt-md inline-flex items-center justify-center gap-2 bg-stamp text-white px-5 py-3.5 rounded-lg text-body-sm text-center font-medium shadow-sm active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stamp/40" href="#contact">Iniciar projeto</a>
 </nav>
 </div>
 
 <!-- Hero -->
-<section class="relative hero-glow pt-32 pb-24 md:pt-40 md:pb-28 overflow-hidden bg-paper">
+<section class="relative hero-texture pt-32 pb-24 md:pt-40 md:pb-28 overflow-hidden bg-paper">
 <div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid lg:grid-cols-[1.15fr_1fr] gap-xl items-start">
 <div class="space-y-md" data-reveal>
-<div class="inline-flex items-center gap-2 text-eyebrow uppercase text-signal">
-<span class="relative flex h-2 w-2">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-signal opacity-60"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-signal"></span>
-</span>
-Disponível para novos projetos
-                </div>
+<span class="font-mono text-eyebrow uppercase tracking-widest text-ink-faint">Aberto para novos projetos</span>
 <h1 class="font-display text-display-mobile md:text-display-lg text-ink">
-                    Sistemas que eu construo para como seu negócio <span class="text-signal">realmente</span> trabalha.
+                    Sistemas que eu construo para como seu negócio <span class="text-stamp">realmente</span> trabalha.
                 </h1>
 <p class="font-sans text-body-lg text-ink-dim max-w-xl">
                     Do controle de frota ao faturamento e comissionamento, eu construo cada sistema sob medida para a rotina real da sua empresa — sem telas genéricas, sem processos que não existem.
                 </p>
 <div class="flex flex-wrap gap-md pt-base">
-<a class="inline-flex items-center justify-center gap-2 bg-signal text-white px-7 py-4 rounded-lg text-body-sm font-medium shadow-sm hover:bg-signal-deep hover:shadow-md active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 focus-visible:ring-offset-2 focus-visible:ring-offset-paper" href="#projects">
+<a class="inline-flex items-center justify-center gap-2 bg-stamp text-white px-7 py-4 rounded-lg text-body-sm font-medium shadow-sm hover:bg-stamp-deep hover:shadow-md active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stamp/40 focus-visible:ring-offset-2 focus-visible:ring-offset-paper" href="#projects">
                         Ver sistemas entregues
                         <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 </a>
-<a class="inline-flex items-center justify-center gap-2 border border-line text-ink px-7 py-4 rounded-lg text-body-sm font-medium hover:border-signal hover:text-signal hover:bg-signal-dim/30 active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 focus-visible:ring-offset-2 focus-visible:ring-offset-paper" href="#contact">
+<a class="inline-flex items-center justify-center gap-2 border border-line text-ink px-7 py-4 rounded-lg text-body-sm font-medium hover:border-stamp hover:text-stamp hover:bg-stamp-dim/40 active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stamp/40 focus-visible:ring-offset-2 focus-visible:ring-offset-paper" href="#contact">
                         Iniciar conversa
                     </a>
 </div>
 </div>
 
-<div class="relative pt-lg border-t border-line lg:pt-0 lg:border-t-0 lg:border-l lg:border-line lg:pl-xl" data-reveal>
-<div class="border-b border-line pb-md mb-md">
-<span class="text-eyebrow uppercase text-ink-faint">Como funciona</span>
+<!-- Ticket: Ordem de Serviço -->
+<div class="relative" data-reveal>
+<div class="bg-surface border border-line rounded-md shadow-sm">
+<div class="flex items-start justify-between gap-3 p-lg">
+<div>
+<p class="font-mono text-eyebrow uppercase tracking-widest text-ink-faint">Ordem de Serviço</p>
+<p class="font-mono text-headline-md text-ink mt-1">Nº 2026/047</p>
+</div>
+<span class="stamp-badge mt-1">Disponível</span>
+</div>
+<div class="ticket-perf px-lg pt-lg pb-md">
+<span class="font-mono text-eyebrow uppercase tracking-widest text-ink-faint">Como funciona</span>
 <div class="mt-sm space-y-2.5">
 <div class="flex items-baseline gap-3">
-<span class="font-display text-body-sm font-semibold text-signal shrink-0 w-5">01</span>
+<span class="font-mono text-body-sm font-semibold text-stamp shrink-0 w-5">01</span>
 <span class="text-body-sm text-ink-dim">Diagnóstico da operação</span>
 </div>
 <div class="flex items-baseline gap-3">
-<span class="font-display text-body-sm font-semibold text-signal shrink-0 w-5">02</span>
+<span class="font-mono text-body-sm font-semibold text-stamp shrink-0 w-5">02</span>
 <span class="text-body-sm text-ink-dim">Desenvolvimento sob medida</span>
 </div>
 <div class="flex items-baseline gap-3">
-<span class="font-display text-body-sm font-semibold text-signal shrink-0 w-5">03</span>
+<span class="font-mono text-body-sm font-semibold text-stamp shrink-0 w-5">03</span>
 <span class="text-body-sm text-ink-dim">Sistema no ar, com suporte</span>
 </div>
 </div>
 </div>
-<span class="text-eyebrow uppercase text-ink-faint">Resultados em números</span>
+<div class="ticket-perf px-lg pt-lg pb-lg">
+<span class="font-mono text-eyebrow uppercase tracking-widest text-ink-faint">Resultados em números</span>
 <div class="mt-sm divide-y divide-line">
 {% for indicador in indicadores %}
 <div class="flex items-center justify-between py-sm">
 <div class="flex items-center gap-sm">
-<span class="material-symbols-outlined text-signal text-[19px]">{{ indicador.icone }}</span>
+<span class="material-symbols-outlined text-stamp text-[19px]">{{ indicador.icone }}</span>
 <span class="font-sans text-body-sm text-ink-dim">{{ indicador.rotulo }}</span>
 </div>
-<span class="font-display text-data-md text-ink tabular-nums" data-countup data-value="{{ indicador.valor }}">0</span>
+<span class="font-mono text-data-md text-ink tabular-nums" data-countup data-value="{{ indicador.valor }}">0</span>
 </div>
 {% endfor %}
 </div>
-<p class="mt-md text-caption text-ink-faint">Indicadores dos sistemas entregues até hoje.</p>
+</div>
+</div>
+<p class="text-center font-mono text-[10px] uppercase tracking-widest text-ink-faint mt-3">Indicadores dos sistemas entregues até hoje</p>
 </div>
 </div>
 </section>
@@ -204,7 +255,7 @@ Disponível para novos projetos
 <section class="py-xl bg-surface-muted/60 border-y border-line" id="projects">
 <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="mb-lg space-y-xs max-w-2xl" data-reveal>
-<span class="text-eyebrow uppercase text-signal">Casos reais</span>
+<span class="font-mono text-eyebrow uppercase tracking-widest text-stamp">Casos reais</span>
 <h2 class="font-display text-headline-lg text-ink mt-xs">Sistemas em operação</h2>
 <p class="font-sans text-body-md text-ink-dim mt-xs">Projetos que eu construí para operações reais — não telas de demonstração.</p>
 </div>
@@ -215,13 +266,10 @@ Disponível para novos projetos
 <img alt="{{ projeto.texto_alternativo }}" class="w-full h-full object-cover grayscale-[0.6] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="{{ projeto.imagem.url }}"/>
 </div>
 <div class="p-md space-y-xs flex flex-col flex-1">
-<span class="inline-block text-caption font-medium uppercase tracking-wide text-signal bg-signal-dim px-2.5 py-1 rounded-full self-start">{{ projeto.categoria }}</span>
+<span class="inline-block font-mono text-caption font-medium uppercase tracking-wide text-stamp bg-stamp-dim px-2.5 py-1 rounded-full self-start">{{ projeto.categoria }}</span>
 <h3 class="font-display text-headline-sm text-ink pt-1">{{ projeto.titulo }}</h3>
-{% if projeto.stack %}
-<p class="font-sans text-caption text-signal font-medium">{{ projeto.stack }}</p>
-{% endif %}
 <p class="font-sans text-body-sm text-ink-dim line-clamp-3">{{ projeto.descricao }}</p>
-<a class="inline-flex items-center gap-1 text-body-sm text-signal pt-xs font-medium mt-auto hover:text-signal-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 rounded-sm w-fit" href="#contact">
+<a class="inline-flex items-center gap-1 text-body-sm text-stamp pt-xs font-medium mt-auto hover:text-stamp-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stamp/40 rounded-sm w-fit" href="#contact">
                             Perguntar sobre este projeto <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>
 </div>
@@ -229,7 +277,7 @@ Disponível para novos projetos
 {% endfor %}
 </div>
 <div class="flex justify-center mt-lg" data-reveal>
-<a class="inline-flex items-center justify-center gap-2 border border-line text-ink px-7 py-4 rounded-lg text-body-sm font-medium hover:border-signal hover:text-signal hover:bg-signal-dim/30 active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-muted" href="https://wa.me/5551983355915" rel="noopener" target="_blank">
+<a class="inline-flex items-center justify-center gap-2 border border-line text-ink px-7 py-4 rounded-lg text-body-sm font-medium hover:border-stamp hover:text-stamp hover:bg-stamp-dim/40 active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stamp/40 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-muted" href="https://wa.me/5551983355915" rel="noopener" target="_blank">
                     Conhecer todos os sistemas e ferramentas
                     <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 </a>
@@ -241,37 +289,29 @@ Disponível para novos projetos
 <section class="py-xl bg-paper">
 <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="mb-lg space-y-xs max-w-2xl" data-reveal>
-<span class="text-eyebrow uppercase text-signal">Além dos sistemas completos</span>
+<span class="font-mono text-eyebrow uppercase tracking-widest text-stamp">Além dos sistemas completos</span>
 <h2 class="font-display text-headline-lg text-ink mt-xs">Também resolvo problemas pontuais.</h2>
 <p class="font-sans text-body-md text-ink-dim mt-xs">Nem sempre é um sistema inteiro que falta. Às vezes é só uma dessas frentes.</p>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter" data-reveal>
-<div class="space-y-sm">
-<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
-<span class="material-symbols-outlined text-[22px]">monitoring</span>
-</span>
-<h3 class="font-display text-headline-sm text-ink">Dashboards de dados</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-line" data-reveal>
+<div class="p-lg space-y-2 border-r border-b border-line">
+<span class="font-mono text-eyebrow text-ink-faint">Nº 01</span>
+<h3 class="font-display text-headline-sm text-ink flex items-center gap-2"><span class="material-symbols-outlined text-stamp text-[20px]">monitoring</span> Dashboards de dados</h3>
 <p class="font-sans text-body-sm text-ink-dim">Transformo planilhas soltas em painéis com os números que importam, atualizados sozinhos.</p>
 </div>
-<div class="space-y-sm">
-<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
-<span class="material-symbols-outlined text-[22px]">travel_explore</span>
-</span>
-<h3 class="font-display text-headline-sm text-ink">Coleta automática de dados</h3>
+<div class="p-lg space-y-2 border-r border-b border-line">
+<span class="font-mono text-eyebrow text-ink-faint">Nº 02</span>
+<h3 class="font-display text-headline-sm text-ink flex items-center gap-2"><span class="material-symbols-outlined text-stamp text-[20px]">travel_explore</span> Coleta automática de dados</h3>
 <p class="font-sans text-body-sm text-ink-dim">Preciso de preço de concorrente, dado de um site, um cadastro público? Eu automatizo a coleta, sem trabalho manual.</p>
 </div>
-<div class="space-y-sm">
-<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
-<span class="material-symbols-outlined text-[22px]">bolt</span>
-</span>
-<h3 class="font-display text-headline-sm text-ink">Automação de tarefas repetitivas</h3>
+<div class="p-lg space-y-2 border-r border-b border-line">
+<span class="font-mono text-eyebrow text-ink-faint">Nº 03</span>
+<h3 class="font-display text-headline-sm text-ink flex items-center gap-2"><span class="material-symbols-outlined text-stamp text-[20px]">bolt</span> Automação de tarefas repetitivas</h3>
 <p class="font-sans text-body-sm text-ink-dim">Relatório que alguém monta toda semana na mão, e-mail que sai sempre igual — eu construo o robô que faz isso por você.</p>
 </div>
-<div class="space-y-sm">
-<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
-<span class="material-symbols-outlined text-[22px]">hub</span>
-</span>
-<h3 class="font-display text-headline-sm text-ink">Integrações entre sistemas</h3>
+<div class="p-lg space-y-2 border-r border-b border-line">
+<span class="font-mono text-eyebrow text-ink-faint">Nº 04</span>
+<h3 class="font-display text-headline-sm text-ink flex items-center gap-2"><span class="material-symbols-outlined text-stamp text-[20px]">hub</span> Integrações entre sistemas</h3>
 <p class="font-sans text-body-sm text-ink-dim">Faço seu sistema conversar com planilha, WhatsApp, banco ou qualquer outra ferramenta que você já usa.</p>
 </div>
 </div>
@@ -282,14 +322,14 @@ Disponível para novos projetos
 <section class="py-xl bg-paper" id="tech">
 <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="mb-lg space-y-xs max-w-2xl" data-reveal>
-<span class="text-eyebrow uppercase text-signal">Stack técnica</span>
+<span class="font-mono text-eyebrow uppercase tracking-widest text-stamp">Stack técnica</span>
 <h2 class="font-display text-headline-lg text-ink mt-xs">Tecnologias que eu uso</h2>
 <p class="font-sans text-body-md text-ink-dim mt-xs">Do código à infraestrutura: as ferramentas que domino para colocar seu sistema no ar com segurança e desempenho.</p>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-md">
 {% for tecnologia in tecnologias %}
-<div class="flex flex-col items-center gap-2 p-md bg-surface-muted border border-line rounded-lg hover:border-signal hover:bg-signal-dim/40 transition-all duration-200 group" data-reveal>
-<span class="material-symbols-outlined text-signal text-[28px] group-hover:scale-110 transition-transform">{{ tecnologia.icone }}</span>
+<div class="flex flex-col items-center gap-2 p-md bg-surface border border-line rounded-lg hover:border-stamp hover:bg-stamp-dim/30 transition-all duration-200 group" data-reveal>
+<span class="material-symbols-outlined text-stamp text-[28px] group-hover:scale-110 transition-transform">{{ tecnologia.icone }}</span>
 <span class="font-sans text-body-sm text-ink font-medium text-center">{{ tecnologia.nome }}</span>
 </div>
 {% endfor %}
@@ -301,36 +341,28 @@ Disponível para novos projetos
 <section class="py-xl bg-paper" id="diferenciais">
 <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="mb-lg space-y-xs max-w-2xl" data-reveal>
-<span class="text-eyebrow uppercase text-signal">Por que trabalhar comigo</span>
+<span class="font-mono text-eyebrow uppercase tracking-widest text-stamp">Por que trabalhar comigo</span>
 <h2 class="font-display text-headline-lg text-ink mt-xs">Você não precisa entender de tecnologia.</h2>
 <p class="font-sans text-body-md text-ink-dim mt-xs">Eu cuido da parte técnica. Você só sente a operação ficar mais simples.</p>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter" data-reveal>
-<div class="space-y-sm">
-<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
-<span class="material-symbols-outlined text-[22px]">support_agent</span>
-</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-line" data-reveal>
+<div class="p-lg space-y-2 border-r border-b border-line">
+<span class="font-mono text-eyebrow text-ink-faint">Nº 01</span>
 <h3 class="font-display text-headline-sm text-ink">Suporte direto</h3>
 <p class="font-sans text-body-sm text-ink-dim">Você fala direto comigo, que construí o seu sistema — sem central de atendimento, sem protocolo.</p>
 </div>
-<div class="space-y-sm">
-<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
-<span class="material-symbols-outlined text-[22px]">tune</span>
-</span>
+<div class="p-lg space-y-2 border-r border-b border-line">
+<span class="font-mono text-eyebrow text-ink-faint">Nº 02</span>
 <h3 class="font-display text-headline-sm text-ink">Do seu jeito</h3>
 <p class="font-sans text-body-sm text-ink-dim">Cada tela é pensada pra sua rotina. Se o seu processo não existe em nenhum sistema pronto, eu construo do zero.</p>
 </div>
-<div class="space-y-sm">
-<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
-<span class="material-symbols-outlined text-[22px]">payments</span>
-</span>
+<div class="p-lg space-y-2 border-r border-b border-line">
+<span class="font-mono text-eyebrow text-ink-faint">Nº 03</span>
 <h3 class="font-display text-headline-sm text-ink">Sem letra miúda</h3>
 <p class="font-sans text-body-sm text-ink-dim">Preço combinado antes de começar. Sem taxa por usuário, sem surpresa na fatura.</p>
 </div>
-<div class="space-y-sm">
-<span class="w-12 h-12 rounded-lg bg-signal-dim flex items-center justify-center text-signal">
-<span class="material-symbols-outlined text-[22px]">bolt</span>
-</span>
+<div class="p-lg space-y-2 border-r border-b border-line">
+<span class="font-mono text-eyebrow text-ink-faint">Nº 04</span>
 <h3 class="font-display text-headline-sm text-ink">No ar rápido</h3>
 <p class="font-sans text-body-sm text-ink-dim">Sem trâmite de meses. Do primeiro papo ao sistema funcionando, no prazo combinado.</p>
 </div>
@@ -342,24 +374,24 @@ Disponível para novos projetos
 <section class="py-xl bg-surface-muted/60 border-y border-line" id="faq">
 <div class="container mx-auto px-margin-mobile md:px-margin-desktop grid lg:grid-cols-2 gap-xl items-start">
 <div class="lg:sticky lg:top-32" data-reveal>
-<span class="text-eyebrow uppercase text-signal">Perguntas frequentes</span>
+<span class="font-mono text-eyebrow uppercase tracking-widest text-stamp">Perguntas frequentes</span>
 <h2 class="font-display text-headline-lg text-ink mt-xs">Tire suas dúvidas antes de começar.</h2>
 <p class="font-sans text-body-md text-ink-dim mt-xs">Se a sua dúvida não estiver aqui, é só chamar — eu respondo direto, sem enrolação.</p>
 <ul class="mt-lg space-y-3">
 <li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-signal text-[20px] shrink-0">check_circle</span>
+<span class="material-symbols-outlined text-stamp text-[20px] shrink-0">check_circle</span>
 <span class="font-sans text-body-sm text-ink-dim">Diagnóstico inicial sem custo</span>
 </li>
 <li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-signal text-[20px] shrink-0">check_circle</span>
+<span class="material-symbols-outlined text-stamp text-[20px] shrink-0">check_circle</span>
 <span class="font-sans text-body-sm text-ink-dim">Preço e prazo fechados antes de começar</span>
 </li>
 <li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-signal text-[20px] shrink-0">check_circle</span>
+<span class="material-symbols-outlined text-stamp text-[20px] shrink-0">check_circle</span>
 <span class="font-sans text-body-sm text-ink-dim">Suporte direto com quem constrói</span>
 </li>
 <li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-signal text-[20px] shrink-0">check_circle</span>
+<span class="material-symbols-outlined text-stamp text-[20px] shrink-0">check_circle</span>
 <span class="font-sans text-body-sm text-ink-dim">Sem contrato de fidelidade</span>
 </li>
 </ul>
@@ -368,7 +400,7 @@ Disponível para novos projetos
 <div class="faq-item">
 <button aria-controls="faq-resposta-1" aria-expanded="false" class="faq-pergunta w-full flex items-center justify-between gap-4 py-5 text-left" id="faq-pergunta-1" type="button">
 <span class="font-display text-headline-sm text-ink">Quanto custa um sistema sob medida?</span>
-<span class="faq-icone material-symbols-outlined text-signal text-[22px] shrink-0 transition-transform duration-300">add</span>
+<span class="faq-icone material-symbols-outlined text-stamp text-[22px] shrink-0 transition-transform duration-300">add</span>
 </button>
 <div class="faq-resposta grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out" id="faq-resposta-1" role="region">
 <div class="overflow-hidden">
@@ -379,7 +411,7 @@ Disponível para novos projetos
 <div class="faq-item">
 <button aria-controls="faq-resposta-2" aria-expanded="false" class="faq-pergunta w-full flex items-center justify-between gap-4 py-5 text-left" id="faq-pergunta-2" type="button">
 <span class="font-display text-headline-sm text-ink">Quanto tempo leva para o sistema ficar pronto?</span>
-<span class="faq-icone material-symbols-outlined text-signal text-[22px] shrink-0 transition-transform duration-300">add</span>
+<span class="faq-icone material-symbols-outlined text-stamp text-[22px] shrink-0 transition-transform duration-300">add</span>
 </button>
 <div class="faq-resposta grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out" id="faq-resposta-2" role="region">
 <div class="overflow-hidden">
@@ -390,7 +422,7 @@ Disponível para novos projetos
 <div class="faq-item">
 <button aria-controls="faq-resposta-3" aria-expanded="false" class="faq-pergunta w-full flex items-center justify-between gap-4 py-5 text-left" id="faq-pergunta-3" type="button">
 <span class="font-display text-headline-sm text-ink">Preciso entender de tecnologia para usar o sistema?</span>
-<span class="faq-icone material-symbols-outlined text-signal text-[22px] shrink-0 transition-transform duration-300">add</span>
+<span class="faq-icone material-symbols-outlined text-stamp text-[22px] shrink-0 transition-transform duration-300">add</span>
 </button>
 <div class="faq-resposta grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out" id="faq-resposta-3" role="region">
 <div class="overflow-hidden">
@@ -401,7 +433,7 @@ Disponível para novos projetos
 <div class="faq-item">
 <button aria-controls="faq-resposta-4" aria-expanded="false" class="faq-pergunta w-full flex items-center justify-between gap-4 py-5 text-left" id="faq-pergunta-4" type="button">
 <span class="font-display text-headline-sm text-ink">Meu processo é muito específico — você consegue atender?</span>
-<span class="faq-icone material-symbols-outlined text-signal text-[22px] shrink-0 transition-transform duration-300">add</span>
+<span class="faq-icone material-symbols-outlined text-stamp text-[22px] shrink-0 transition-transform duration-300">add</span>
 </button>
 <div class="faq-resposta grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out" id="faq-resposta-4" role="region">
 <div class="overflow-hidden">
@@ -412,7 +444,7 @@ Disponível para novos projetos
 <div class="faq-item">
 <button aria-controls="faq-resposta-5" aria-expanded="false" class="faq-pergunta w-full flex items-center justify-between gap-4 py-5 text-left" id="faq-pergunta-5" type="button">
 <span class="font-display text-headline-sm text-ink">E se eu precisar de um ajuste depois que o sistema estiver no ar?</span>
-<span class="faq-icone material-symbols-outlined text-signal text-[22px] shrink-0 transition-transform duration-300">add</span>
+<span class="faq-icone material-symbols-outlined text-stamp text-[22px] shrink-0 transition-transform duration-300">add</span>
 </button>
 <div class="faq-resposta grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out" id="faq-resposta-5" role="region">
 <div class="overflow-hidden">
@@ -423,7 +455,7 @@ Disponível para novos projetos
 <div class="faq-item">
 <button aria-controls="faq-resposta-6" aria-expanded="false" class="faq-pergunta w-full flex items-center justify-between gap-4 py-5 text-left" id="faq-pergunta-6" type="button">
 <span class="font-display text-headline-sm text-ink">Preciso abandonar as planilhas e o WhatsApp de uma vez?</span>
-<span class="faq-icone material-symbols-outlined text-signal text-[22px] shrink-0 transition-transform duration-300">add</span>
+<span class="faq-icone material-symbols-outlined text-stamp text-[22px] shrink-0 transition-transform duration-300">add</span>
 </button>
 <div class="faq-resposta grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out" id="faq-resposta-6" role="region">
 <div class="overflow-hidden">
@@ -441,28 +473,18 @@ Disponível para novos projetos
 <div class="grid lg:grid-cols-2 gap-xl">
 <div class="space-y-lg" data-reveal>
 <div class="space-y-base">
-<span class="text-eyebrow uppercase text-signal">Iniciar projeto</span>
+<span class="font-mono text-eyebrow uppercase tracking-widest text-stamp">Iniciar projeto</span>
 <h2 class="font-display text-headline-lg text-ink mt-xs">Sua operação, em sistema.</h2>
 <p class="font-sans text-body-lg text-ink-dim mt-xs">Conte o que trava sua operação hoje. Eu respondo com um diagnóstico técnico, não com um roteiro de vendas.</p>
 </div>
-<div class="space-y-md">
-<div class="flex items-center gap-md">
-<div class="w-11 h-11 rounded-lg bg-signal-dim flex items-center justify-center text-signal shrink-0">
-<span class="material-symbols-outlined text-[20px]">mail</span>
+<div class="space-y-md border-t border-line pt-md">
+<div>
+<p class="font-mono text-eyebrow uppercase tracking-widest text-ink-faint">E-mail</p>
+<a class="font-sans text-body-md text-ink font-medium mt-1 hover:text-stamp transition-colors block" href="mailto:leandro10lopesbaln@gmail.com">leandro10lopesbaln@gmail.com</a>
 </div>
 <div>
-<p class="text-eyebrow uppercase text-ink-faint">E-mail</p>
-<a class="font-sans text-body-md text-ink font-medium mt-1 hover:text-signal transition-colors block" href="mailto:leandro10lopesbaln@gmail.com">leandro10lopesbaln@gmail.com</a>
-</div>
-</div>
-<div class="flex items-center gap-md">
-<div class="w-11 h-11 rounded-lg bg-signal-dim flex items-center justify-center text-signal shrink-0">
-<span class="material-symbols-outlined text-[20px]">phone_iphone</span>
-</div>
-<div>
-<p class="text-eyebrow uppercase text-ink-faint">Telefone / WhatsApp</p>
-<a class="font-sans text-body-md text-ink font-medium mt-1 hover:text-signal transition-colors block" href="https://wa.me/5551983355915" rel="noopener" target="_blank">+55 (51) 98335-5915</a>
-</div>
+<p class="font-mono text-eyebrow uppercase tracking-widest text-ink-faint">Telefone / WhatsApp</p>
+<a class="font-sans text-body-md text-ink font-medium mt-1 hover:text-stamp transition-colors block" href="https://wa.me/5551983355915" rel="noopener" target="_blank">+55 (51) 98335-5915</a>
 </div>
 </div>
 </div>
@@ -478,23 +500,23 @@ Disponível para novos projetos
 {% csrf_token %}
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
 <div class="space-y-xs">
-<label class="text-eyebrow uppercase text-ink-faint" for="{{ formulario.nome.id_for_label }}">Nome</label>
+<label class="font-mono text-eyebrow uppercase tracking-widest text-ink-faint" for="{{ formulario.nome.id_for_label }}">Nome</label>
 {{ formulario.nome }}
 </div>
 <div class="space-y-xs">
-<label class="text-eyebrow uppercase text-ink-faint" for="{{ formulario.email.id_for_label }}">E-mail</label>
+<label class="font-mono text-eyebrow uppercase tracking-widest text-ink-faint" for="{{ formulario.email.id_for_label }}">E-mail</label>
 {{ formulario.email }}
 </div>
 </div>
 <div class="space-y-xs">
-<label class="text-eyebrow uppercase text-ink-faint" for="{{ formulario.assunto.id_for_label }}">Assunto</label>
+<label class="font-mono text-eyebrow uppercase tracking-widest text-ink-faint" for="{{ formulario.assunto.id_for_label }}">Assunto</label>
 {{ formulario.assunto }}
 </div>
 <div class="space-y-xs">
-<label class="text-eyebrow uppercase text-ink-faint" for="{{ formulario.mensagem.id_for_label }}">Mensagem</label>
+<label class="font-mono text-eyebrow uppercase tracking-widest text-ink-faint" for="{{ formulario.mensagem.id_for_label }}">Mensagem</label>
 {{ formulario.mensagem }}
 </div>
-<button class="w-full inline-flex items-center justify-center gap-2 bg-signal text-white py-4 rounded-lg text-body-sm font-medium shadow-sm hover:bg-signal-deep hover:shadow-md active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40 focus-visible:ring-offset-2 focus-visible:ring-offset-surface" type="submit">
+<button class="w-full inline-flex items-center justify-center gap-2 bg-stamp text-white py-4 rounded-lg text-body-sm font-medium shadow-sm hover:bg-stamp-deep hover:shadow-md active:scale-[0.98] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stamp/40 focus-visible:ring-offset-2 focus-visible:ring-offset-surface" type="submit">
                             Enviar mensagem <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 </button>
 </form>
@@ -509,7 +531,7 @@ Disponível para novos projetos
 <div class="flex items-center">
 <span class="font-display text-[15px] text-ink font-semibold">Leandro — Dev.</span>
 </div>
-<p class="font-sans text-caption text-ink-faint">
+<p class="font-mono text-caption text-ink-faint">
                 © 2026 Leandro — Desenvolvedor de Sistemas de Gestão. Todos os direitos reservados.
             </p>
 </div>

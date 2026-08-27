@@ -4,7 +4,7 @@ from .models import MensagemContato
 
 CLASSE_CAMPO = (
     "w-full bg-surface-muted border border-line rounded-lg text-ink placeholder-ink-faint "
-    "font-sans text-body-sm px-3.5 py-3 focus:border-signal focus:ring-2 focus:ring-signal/20 "
+    "font-sans text-body-sm px-3.5 py-3 focus:border-stamp focus:ring-2 focus:ring-stamp/20 "
     "outline-none transition-colors"
 )
 
